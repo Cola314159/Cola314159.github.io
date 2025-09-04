@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+<title>智能车-电磁组的传承（持续更新） | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Cola’s  Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Cola’s  Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">智能车-电磁组的传承（持续更新）</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">John Doe</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">September 5, 2025&nbsp;&nbsp;1:52:36</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="智能车-电磁组的传承（持续更新）"><a href="#智能车-电磁组的传承（持续更新）" class="headerlink" title="智能车-电磁组的传承（持续更新）"></a>智能车-电磁组的传承（持续更新）</h1><p>这里是自然选择号，我们是第二十届智能车的参赛成员，在2025年的夏天有幸参加了杭电的第二十届智能车国赛，我们基本上看了所有组别的比赛情况，看完大受震撼，许多竞赛强校如哈工大、哈工程、杭电等等，他们包揽了几乎所有组别的国一，而河南大学只能偶尔出一个国一，相信你们也在车库的墙上看到了，这说明我们比他们差吗？我觉得并非，很大一部分原因就是我们实验室从来没有一个真正的传承，这在我们备赛时深有体会，许多坑或者说许多解决方案可能我们的学长学姐已经解决过了，可我们还在重复造轮子。跌跌撞撞，让本就不充裕的备赛时间浪费在一点点小问题上，这也是我写这篇文章的原因，站在前人的肩膀上可以让我们看的更远，我们非常感谢十八届，十九届智能车的老学长的支持，没有他们的帮助，就没有现在的自然选择号。因此，我要在这里写下所有我对电磁车的理解，让你们去参考，但前人的经验并非总是对的，<strong>经验往往也意味着错误，你们要始终以批判的态度去对待新事物。</strong></p>
+<p><strong>希望，可以让你们接下我们的遗憾，挺进国一</strong>。</p>
+<h1 id="关于电磁循迹"><a href="#关于电磁循迹" class="headerlink" title="关于电磁循迹"></a>关于电磁循迹</h1><p><strong>先简单讲一下电磁循迹的原理</strong></p>
+<p>电磁场地是赛道中央铺设电磁线，电磁线的两头接信号发生器形成闭合回路，这时整条电磁线就通过有20kHz，100mA的正弦电流，电生磁会让漆包线周围产生周期变化的磁场，而我们的电磁车的传感器有<strong>LC并联选频</strong>的电感，<strong>只选取</strong>空间中20kHz这个频率的电磁信号，感应出感应电动势，再经过运放来放大这个信号，交给单片机的ADC去读取，就可以读到一个电压。这个电压大小会和电感与电磁线的相对位置的变化而变化，这里讲的是位置，而非距离。因为我们知道一根通电导线，它周围的磁场分布满足右手定则，电感的结构是很多匝线圈，只有通电导线产生的磁感线垂直线圈平面，它在此处的感应电动势才是最大的，当然电感距离导线越近，它读到的电压也会相应更大。</p>
+<ul>
+<li>简单的来说，就是<strong>电感距离磁场越近，产生的感应电动势越大，距离越远，产生的感应电动势越小。</strong></li>
+<li><strong>电感的布局</strong>，即与电磁线夹的角度，影响着小车运动时切割磁感线产生的感应电动势，对循迹与元素识别起着重大影响。</li>
+<li>直观的来说，将车静置在赛道中央，同一水平高度上，与电磁线方向垂直放置的电感，获取的值最大，平行的电感，获取的值最小。</li>
+</ul>
+<p>我在这里标了几个关键词，一个是LC并联选频，这个很重要，它选频的精度直接影响了小车读取信号的精度，对于缩微的赛道这一点更应被重视，这里强烈建议大家尽快在前期确定好自己电感排布的方案，尽快换上联物电子的黄色配频电感来调试，虽然贵，但电感就是我们电磁车的眼睛，循迹只能依靠那几个冰冷的数字，马虎不得，<strong>一定要舍得花钱，知识是无价的！</strong></p>
+<h1 id="关于电感排布"><a href="#关于电感排布" class="headerlink" title="关于电感排布"></a>关于电感排布</h1><p>电感的排布是相当讲究的，它直接影响了小车的响应特性，甚至决定了小车的速度上限，我们的赛道有直角，折线，六边形环岛，十字，折线这些元素。经过多次尝试，我们的小车最终采用了如下的电感排布，<strong>三颗横电感，两颗竖电感</strong>，在我们的代码中从左到右分别命名为 left1 left2 middle right2 right1 ，其中左一和右一两颗电感在直线以及小角度折线循迹时比较重要，因为在直道上这两颗电感读取的值最大，竖电感的值几乎为0。在面对直角以及大角度直线时，这两颗电感读到的值就不够大了，作用也会不够显著，因此在直角时，主要是竖直电感在起作用。中间那颗横电感呢？它是我们控制的核心，是我们代码里最最核心的部分。这在后文的控制部分会详细讲到。</p>
+<p>在前面讲到过，前人的经验并非总是对的，我们18届的老学长采用的是五颗<strong>八字电感排布</strong>，我们一开始什么也不了解，选择直接照搬老学长的结构，但在之后的测试中效果并不理想，后来才了解到，学长当年是负压电磁，用的PVC赛道，没有尖锐的转折，是平滑的弧线构成的直角和弯道，八字电感的倾斜角度刚好可以保持和曲线垂直，且过渡较为平滑。在他们那一年，这个结构是比较好用的。后来经过一段时间的试错，我们放弃了这个结构，改成了前面的那种结构。</p>
+<p>在第二十届最终的比赛中，我们留意了所有的电磁车的电感排布，很多用的是和我们一样的结构，五颗电感垂直排布，几乎没有看见用八字电感排布的，这说明我们走的弯路是对的，最后的决定也是对的，因为在国赛，好的设计都是趋同的。</p>
+<p>非常值得一提的是，我们看到的另外一个结构，也是垂直结构，但只有四颗电感，没有中间那颗，和逐飞的学习版前瞻很像，不同的是它左侧两电感以及右侧两电感，一横一竖挨的十分紧，我们这一年的国冠采用的即是这种结构，这和他们的控制代码是联系十分紧密的，我和这些队伍的成员交流过，他们采用的控制算法叫<strong>差比和差</strong>，在CSDN上有十分详细的文章来解释这个算法，我在省赛前有尝试过这个办法，比<strong>普通差比和</strong>算法优越太多，但可惜留给我们尝试的时间不多了，我们为了保守一点稳定一点，还是采用了我们的老办法：<strong>基于中间横电感的动态权重</strong>，这个办法是值得尝试的，我的尝试差比和差的代码也在我留给你们的文件夹里，希望后来者可以试试。</p>
+<p><strong>说完了优点，那该聊聊缺点了</strong></p>
+<p>我们采用的这个垂直电感排布，遇到了一个很矛盾的问题，在缩微赛道，车车是很小的，前瞻也不能伸出去太多，否则会有串道的风险，这就会让小车在接近直角时，竖直电感变化的速度会非常非常快，极容易造成超调，拐弯会很猛，拐弯过猛就会导致小车速度一下就掉下来了，拐完弯就又要重新加速，十分浪费时间，而且我们还需要无线充电，电容组里存储的电能本就不多，这样会十分费电。那如果拐弯不猛呢？可不可以让弯道的PID调控力度不那么大？也不行，至少对于缩微赛道不行，因为赛道中直角与直角是不一样的，有的直角距离相邻电磁线只有30cm，调小一点就会让这种位置的直角串道。所以这也是我推荐大家尝试差比和差的原因，因为它相较动态权重，调节a,b,c的参数，拐弯会平滑一些。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>欢迎你来翻阅</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>保持好奇心，永远不放弃</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© John Doe | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
