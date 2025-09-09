@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+<title>立创实战派ESP32S3学习历程 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Cola’s  Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Cola’s  Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">立创实战派ESP32S3学习历程</h1>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="立创实战派ESP32S3学习历程"><a href="#立创实战派ESP32S3学习历程" class="headerlink" title="立创实战派ESP32S3学习历程"></a>立创实战派ESP32S3学习历程</h1><p><em>在2025年6月初购入这块开发板，由于暑假事情比较多，搁置数月，在今天9月6日开始学习</em>。</p>
+<h2 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h2><p>首先进入VS Code，打开官方给的_sample_project_这个文件夹，以此为模板进行开发，第一步选择目标芯片，点击下方芯片的图标，选择esp32_s3，然后选择解释中带bridge的这行，即第三行，选择此芯片。</p>
+<p><img src="/./%E7%AB%8B%E5%88%9B%E5%AE%9E%E6%88%98%E6%B4%BEESP32S3%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B.assets/image-20250906002847933.png" alt="image-20250906002847933"></p>
+<p>之后选择串口下载方式，在编辑器下方，有一个五角星形状的图标，点击它，选择UART下载方式。而后连接上实战派，选择实战派对应的串口号。选择成功后就可以进行烧录了，选择形状为小火苗的一键三连按钮，即可等待烧录，烧录成功会有很多行绿色的字符。消息提示Flash Done。</p>
+<p><img src="/./%E7%AB%8B%E5%88%9B%E5%AE%9E%E6%88%98%E6%B4%BEESP32S3%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B.assets/image-20250906003603496.png" alt="image-20250906003603496"></p>
+<h2 id="按键驱动程序"><a href="#按键驱动程序" class="headerlink" title="按键驱动程序"></a>按键驱动程序</h2><p>按照上面的办法，打开官方给的_sample_project_这个文件夹，把此文件夹改名为boot_key，而后通过VS Code打开此文件夹，更改CMakeLists.txt里的project，同样命名为boot_key</p>
+<p><img src="/./%E7%AB%8B%E5%88%9B%E5%AE%9E%E6%88%98%E6%B4%BEESP32S3%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B.assets/image-20250906004106413.png" alt="image-20250906004106413"></p>
+<p>之后就可以在main.c里添加代码了，第一次学习，可以参考立创的例程来学习，按键驱动需要调用GPIO口读取高低电平，所以配置GPIO是必须的，为了可以观察到现象，也需要在按键按下的那一刻进入中断，给编辑器返回按键按下的响应，所以中断也是必须的。</p>
+<p>为便于学习，我们可以把一整个esp_idf这个文件夹在VS Code中打开，我们要参考的代码，位于gpio的main.c函数。</p>
+<p>我们可以复制它初始化GPIO的函数，函数名为app_main，初始化代码如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//zero-initialize the config structure.</span></span><br><span class="line">   <span class="type">gpio_config_t</span> io_conf = &#123;&#125;;</span><br><span class="line">   <span class="comment">//disable interrupt</span></span><br><span class="line">   io_conf.intr_type = GPIO_INTR_DISABLE;</span><br><span class="line">   <span class="comment">//set as output mode</span></span><br><span class="line">   io_conf.mode = GPIO_MODE_OUTPUT;</span><br><span class="line">   <span class="comment">//bit mask of the pins that you want to set,e.g.GPIO18/19</span></span><br><span class="line">   io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;</span><br><span class="line">   <span class="comment">//disable pull-down mode</span></span><br><span class="line">   io_conf.pull_down_en = <span class="number">0</span>;</span><br><span class="line">   <span class="comment">//disable pull-up mode</span></span><br><span class="line">   io_conf.pull_up_en = <span class="number">0</span>;</span><br><span class="line">   <span class="comment">//configure GPIO with the given settings</span></span><br><span class="line">   gpio_config(&amp;io_conf);</span><br></pre></td></tr></table></figure>
+
+<p>它首先定义了一个结构体，结构体的第一个成员为是否开启中断，第二个为GPIO输入输出方式，第三个为选择引脚，剩下两个为是否打开下拉和上拉电阻。</p>
+<p>对于本次例程，我们需要开启中断，需要选择自定义按键的引脚，所以我们需要给第一个成员开启中断，在例程中右键原状态跳转定义，可以看到有许多触发中断的条件，对于按键检测，我们选择哪种都可以，现在选择下降沿中断，复制，粘贴到我们的工程里。之后修改输入输出方式，依旧跳转定义，选择GPIO_MODE_INPUT，第三需要选择引脚，在例程里引脚用了宏定义，上滑找到宏定义内容，我们复制一个它的宏定义，末位有一个数字，为左移几位，选择GPIO几就需要左移几位，这里我们用的是GPIO0，我们需要左移0位，改为0，但为了代码可读性，我们不直接用此宏定义，而是使用GPIO_NUM_0这个宏定义。</p>
+<p>因为我们使用的是按键，所以需要打开上拉电阻，上拉电阻这行写1。</p>
+<p>然而配置一个GPIO没必要写这么多行，我们可以把它写的紧凑些，删掉注释，再删掉结构体前缀io_conf再把每一行的分号换成逗号，最后把它们放入结构体成员的大括号里。就是如下形式，简洁又紧凑。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//zero-initialize the config structure.</span></span><br><span class="line">    <span class="type">gpio_config_t</span> io_conf = &#123;</span><br><span class="line">        .intr_type = GPIO_INTR_NEGEDGE,</span><br><span class="line">        .mode = GPIO_MODE_INPUT,</span><br><span class="line">        .pin_bit_mask = <span class="number">1ULL</span>&lt;&lt;GPIO_NUM_0,</span><br><span class="line">        .pull_down_en = <span class="number">0</span>,</span><br><span class="line">        .pull_up_en = <span class="number">1</span></span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>接下来需要打开中断，回到例程的第108行左右，复制它的四行中断开启和服务函数代码</p>
+<p><img src="/./%E7%AB%8B%E5%88%9B%E5%AE%9E%E6%88%98%E6%B4%BEESP32S3%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B.assets/image-20250906011659865.png" alt="image-20250906011659865"></p>
+<p>粘贴到我们工程gpio_config的下面，我们粘贴的第一行代码，是创建了一个队列消息，第二行是创建了一个任务，第三行打开了中断服务，最后一行创建了一个中断服务函数。最后一行有三个参数，第一个是代表哪一个GPIO，第三个就是这个中断服务函数的入口参数。</p>
+<p>前两行代码不需要修改，我们看第三行，它里面的参数我们可以跳转定义看一下，也在例程前面定义，实际上就是0，我们可以直接把这个宏定义复制过去，或者直接写0。在最后一行，我们需要修改第一个和第三个参数，都改为GPIO_NUM_0。</p>
+<p>如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//create a queue to handle gpio event from isr</span></span><br><span class="line">  gpio_evt_queue = xQueueCreate(<span class="number">10</span>, <span class="keyword">sizeof</span>(<span class="type">uint32_t</span>));</span><br><span class="line">  <span class="comment">//start gpio task</span></span><br><span class="line">  xTaskCreate(gpio_task_example, <span class="string">&quot;gpio_task_example&quot;</span>, <span class="number">2048</span>, <span class="literal">NULL</span>, <span class="number">10</span>, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//install gpio isr service</span></span><br><span class="line">  gpio_install_isr_service(<span class="number">0</span>);</span><br><span class="line">  <span class="comment">//hook isr handler for specific gpio pin</span></span><br><span class="line">  gpio_isr_handler_add(GPIO_NUM_0, gpio_isr_handler, (<span class="type">void</span>*) GPIO_NUM_0);</span><br></pre></td></tr></table></figure>
+
+<p>接下来我们需要定义队列任务以及中断服务函数，这些在例程主函数的前面，我们复制一下，也粘贴在我们工程的主函数前面</p>
+<p><img src="/./C:/Users/Lenovo/Desktop/MarkDown/%E7%AB%8B%E5%88%9B%E5%AE%9E%E6%88%98%E6%B4%BEESP32S3%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B.assets/image-20250906012754392.png" alt="image-20250906012754392"></p>
+<p>第一个static定义了队列消息，第二个是中断服务函数，第三个是任务函数，这三个不需要修改，接下来我们把例程所有的头文件都复制添加到我们的工程里。</p>
+<p>到此我们的代码就写好了，可以选择芯片，然后点击编辑器下方的齿轮按钮，配置menu config，加载完成后选择Serial flasher config，只需要修改flash大小就可以，改为16MB，然后保存关闭。</p>
+<p><img src="/./C:/Users/Lenovo/Desktop/MarkDown/%E7%AB%8B%E5%88%9B%E5%AE%9E%E6%88%98%E6%B4%BEESP32S3%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B.assets/image-20250906013541556.png" alt="image-20250906013541556"></p>
+<p>之后就可以选择串口下载方式，选择串口号，一键三连下载了。</p>
+<p>以下便是本工程全部代码。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;inttypes.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;freertos/FreeRTOS.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;freertos/task.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;freertos/queue.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;driver/gpio.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> QueueHandle_t gpio_evt_queue = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> IRAM_ATTR <span class="title function_">gpio_isr_handler</span><span class="params">(<span class="type">void</span>* arg)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">uint32_t</span> gpio_num = (<span class="type">uint32_t</span>) arg;</span><br><span class="line">    xQueueSendFromISR(gpio_evt_queue, &amp;gpio_num, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">gpio_task_example</span><span class="params">(<span class="type">void</span>* arg)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">uint32_t</span> io_num;</span><br><span class="line">    <span class="keyword">for</span> (;;) &#123;</span><br><span class="line">        <span class="keyword">if</span> (xQueueReceive(gpio_evt_queue, &amp;io_num, portMAX_DELAY)) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;GPIO[%&quot;</span>PRIu32<span class="string">&quot;] intr, val: %d\n&quot;</span>, io_num, gpio_get_level(io_num));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">app_main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//zero-initialize the config structure.</span></span><br><span class="line">    <span class="type">gpio_config_t</span> io_conf = &#123;</span><br><span class="line">        <span class="comment">//disable interrupt</span></span><br><span class="line">        .intr_type = GPIO_INTR_NEGEDGE,</span><br><span class="line">        <span class="comment">//set as output mode</span></span><br><span class="line">        .mode = GPIO_MODE_INPUT,</span><br><span class="line">        <span class="comment">//bit mask of the pins that you want to set,e.g.GPIO18/19</span></span><br><span class="line">        .pin_bit_mask = <span class="number">1ULL</span>&lt;&lt;GPIO_NUM_0,</span><br><span class="line">        <span class="comment">//disable pull-down mode</span></span><br><span class="line">        .pull_down_en = <span class="number">0</span>,</span><br><span class="line">        <span class="comment">//disable pull-up mode</span></span><br><span class="line">        .pull_up_en = <span class="number">1</span></span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//configure GPIO with the given settings</span></span><br><span class="line">    gpio_config(&amp;io_conf);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//create a queue to handle gpio event from isr</span></span><br><span class="line">    gpio_evt_queue = xQueueCreate(<span class="number">10</span>, <span class="keyword">sizeof</span>(<span class="type">uint32_t</span>));</span><br><span class="line">    <span class="comment">//start gpio task</span></span><br><span class="line">    xTaskCreate(gpio_task_example, <span class="string">&quot;gpio_task_example&quot;</span>, <span class="number">2048</span>, <span class="literal">NULL</span>, <span class="number">10</span>, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//install gpio isr service</span></span><br><span class="line">    gpio_install_isr_service(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">//hook isr handler for specific gpio pin</span></span><br><span class="line">    gpio_isr_handler_add(GPIO_NUM_0, gpio_isr_handler, (<span class="type">void</span>*) GPIO_NUM_0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>欢迎你来翻阅</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>世之奇伟，瑰怪，非常之观，常在于险远，非有志者不能至也。</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/09/10/%E6%99%BA%E8%83%BD%E8%BD%A6-%E7%94%B5%E7%A3%81%E7%BB%84%E7%9A%84%E4%BC%A0%E6%89%BF%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/">智能车-电磁组的传承（持续更新）</a>
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© John Doe | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+<title>智能车-电磁组的传承（持续更新） | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Cola’s  Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Cola’s  Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">智能车-电磁组的传承（持续更新）</h1>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="智能车-电磁组的传承（持续更新）"><a href="#智能车-电磁组的传承（持续更新）" class="headerlink" title="智能车-电磁组的传承（持续更新）"></a>智能车-电磁组的传承（持续更新）</h1><p>这里是自然选择号，我们是第二十届智能车的参赛成员，在2025年的夏天有幸参加了杭电的第二十届智能车国赛，我们基本上看了所有组别的比赛情况，看完大受震撼，许多竞赛强校如哈工大、哈工程、杭电等等，他们包揽了几乎所有组别的国一，而河南大学只能偶尔出一个国一，相信你们也在车库的墙上看到了，这说明我们比他们差吗？我觉得并非，很大一部分原因就是我们实验室从来没有一个真正的传承，这在我们备赛时深有体会，许多坑或者说许多解决方案可能我们的学长学姐已经解决过了，可我们还在重复造轮子。跌跌撞撞，让本就不充裕的备赛时间浪费在一点点小问题上，这也是我写这篇文章的原因，站在前人的肩膀上可以让我们看的更远，我们非常感谢十八届，十九届智能车的老学长的支持，没有他们的帮助，就没有现在的自然选择号。因此，我要在这里写下所有我对电磁车的理解，让你们去参考，但前人的经验并非总是对的，<strong>经验往往也意味着错误，你们要始终以批判的态度去对待新事物。</strong></p>
+<p><strong>希望，可以让你们接下我们的遗憾，挺进国一</strong>。</p>
+<p><strong>更希望，这份文档可以帮助你们，你们也可以接下这份传承，让车库越来越好</strong>。</p>
+<p><img src="/./C:/Users/Lenovo/Desktop/MarkDown/%E6%99%BA%E8%83%BD%E8%BD%A6-%E7%94%B5%E7%A3%81%E7%BB%84%E7%9A%84%E4%BC%A0%E6%89%BF%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89.assets/5d9741c12cd6dc1d71f71972e3e99f2e.jpg" alt="5d9741c12cd6dc1d71f71972e3e99f2e"></p>
+<p><em>这份MarkDown文档的编排顺序即我们调车的一步又一步的过程，是和自然选择号的成长过程重合的，我尽量多的把我们踩过的坑写在里面，让你们少走些弯路，你们可以按照文档里的步骤来一步一步让自己的车跑起来，这样会轻松一些，但轻松并不意味着走了正确的路，“鼓励探索，追求卓越”这是智能车大赛的座右铭，也是我想写在前面告诉你们的。至于我为什么把这个文档放在GitHub的个人博客里，是因为并不想让这份文档传播出去，放CSDN，知乎，都会被所有人看到。这份文档只面向车库开源，这是一代又一代老学长的心血，是车库的私有财产，也希望大家不要将本网站域名发给车库外的同学。</em></p>
+<h2 id="关于电磁循迹"><a href="#关于电磁循迹" class="headerlink" title="关于电磁循迹"></a>关于电磁循迹</h2><p><strong>先简单讲一下电磁循迹的原理</strong>。</p>
+<p>电磁场地是赛道中央铺设电磁线，电磁线的两头接信号发生器形成闭合回路，这时整条电磁线就通过有20kHz，100mA的正弦电流，电生磁会让漆包线周围产生周期变化的磁场，而我们的电磁车的传感器有<strong>LC并联选频</strong>的电感，<strong>只选取</strong>空间中20kHz这个频率的电磁信号，感应出感应电动势，再经过运放来放大这个信号，交给单片机的ADC去读取，就可以读到一个电压。这个电压大小会和电感与电磁线的相对位置的变化而变化，这里讲的是位置，而非距离。因为我们知道一根通电导线，它周围的磁场分布满足右手定则，电感的结构是很多匝线圈，只有通电导线产生的磁感线垂直线圈平面，它在此处的感应电动势才是最大的，当然电感距离导线越近，它读到的电压也会相应更大。</p>
+<ul>
+<li>简单的来说，就是<strong>电感距离磁场越近，产生的感应电动势越大，距离越远，产生的感应电动势越小。</strong></li>
+<li><strong>电感的布局</strong>，即与电磁线夹的角度，影响着小车运动时切割磁感线产生的感应电动势，对循迹与元素识别起着重大影响。</li>
+<li>直观的来说，将车静置在赛道中央，同一水平高度上，与电磁线方向垂直放置的电感，获取的值最大，平行的电感，获取的值最小。</li>
+</ul>
+<p>我在这里标了几个关键词，一个是LC并联选频，这个很重要，它选频的精度直接影响了小车读取信号的精度，对于缩微的赛道这一点更应被重视，这里强烈建议大家尽快在前期确定好自己电感排布的方案，尽快换上<strong>联物电子的黄色配频电感</strong>来调试，虽然贵，但电感就是我们电磁车的眼睛，循迹只能依靠那几个冰冷的数字，马虎不得，<strong>一定要舍得花钱，知识是无价的！</strong></p>
+<h2 id="关于电感排布"><a href="#关于电感排布" class="headerlink" title="关于电感排布"></a>关于电感排布</h2><h3 id="电感的位置"><a href="#电感的位置" class="headerlink" title="电感的位置"></a>电感的位置</h3><p>电感的排布是相当讲究的，它直接影响了小车的响应特性，甚至决定了小车的速度上限，我们的赛道有直角，折线，六边形环岛，十字，折线这些元素。经过多次尝试，我们的小车最终采用了如下的电感排布，<strong>三颗横电感，两颗竖电感</strong>，在我们的代码中从左到右分别命名为 left1 left2 middle right2 right1 ，其中左一和右一两颗电感在直线以及小角度折线循迹时比较重要，因为在直道上这两颗电感读取的值最大，竖电感的值几乎为0。在面对直角以及大角度直线时，这两颗电感读到的值就不够大了，作用也会不够显著，因此在直角时，主要是竖直电感在起作用。中间那颗横电感呢？它是我们控制的核心，是我们代码里最最核心的部分。这在后文的控制部分会详细讲到。</p>
+<p>下图为自然选择号的电感排布。</p>
+<p><img src="/./C:/Users/Lenovo/Desktop/MarkDown/%E6%99%BA%E8%83%BD%E8%BD%A6-%E7%94%B5%E7%A3%81%E7%BB%84%E7%9A%84%E4%BC%A0%E6%89%BF%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89.assets/e497188788f7b0486a21fde52bac8994.jpg" alt="e497188788f7b0486a21fde52bac8994"></p>
+<p>在前面讲到过，前人的经验并非总是对的，我们18届的老学长采用的是五颗<strong>八字电感排布</strong>，所谓八字电感，就是把那两颗竖直电感改为了向外侧倾斜45°的方式，我们一开始什么也不了解，选择直接照搬老学长的结构，但在之后的测试中效果并不理想，后来才了解到，学长当年是负压电磁，用的PVC赛道，没有尖锐的转折，是平滑的弧线构成的直角和弯道，八字电感的倾斜角度刚好可以保持和曲线垂直，且过渡较为平滑。在他们那一年，这个结构是比较好用的。后来经过一段时间的试错，我们放弃了这个结构，改成了前面的那种结构。</p>
+<p>在第二十届最终的比赛中，我们留意了所有的电磁车的电感排布，很多用的是和我们一样的结构，五颗电感垂直排布，几乎没有看见用八字电感排布的，这说明我们走的弯路是对的，最后的决定也是对的，因为在国赛，好的设计都是趋同的。</p>
+<p>非常值得一提的是，我们看到的另外一个结构，也是垂直结构，但只有四颗电感，没有中间那颗，和逐飞的学习版前瞻很像，不同的是它左侧两电感以及右侧两电感，一横一竖挨的十分紧，我们这一年的国冠采用的即是这种结构，这和他们的控制代码是联系十分紧密的，我和这些队伍的成员交流过，他们采用的控制算法叫<strong>差比和差</strong>，在CSDN上有十分详细的文章来解释这个算法，我在省赛前有尝试过这个办法，比<strong>普通差比和</strong>算法优越太多，但可惜留给我们尝试的时间不多了，我们为了保守一点稳定一点，还是采用了我们的老办法：<strong>基于中间横电感的动态权重</strong>。差比和差这个办法是值得尝试的，我的尝试差比和差的代码也在我留给你们的文件夹里，希望后来者可以试试。</p>
+<p><strong>说完了优点，那该聊聊缺点了</strong>。</p>
+<p>我们采用的这个垂直电感排布，遇到了一个很矛盾的问题，在缩微赛道，车车是很小的，前瞻也不能伸出去太多，否则会有串道的风险，这就会让小车在接近直角时，竖直电感变化的速度会非常非常快，极容易造成超调，拐弯会很猛，拐弯过猛就会导致小车速度一下就掉下来了，拐完弯就又要重新加速，十分浪费时间，而且我们还需要无线充电，电容组里存储的电能本就不多，这样会十分费电。那如果拐弯不猛呢？可不可以让弯道的PID调控力度不那么大？也不行，至少对于缩微赛道不行，因为赛道中直角与直角是不一样的，有的直角距离相邻电磁线只有30cm，调小一点就会让这种位置的直角串道。所以这也是我推荐大家尝试差比和差的原因，因为它相较动态权重，调节a,b,c的参数，拐弯会平滑一些。</p>
+<h3 id="电感杆的长度"><a href="#电感杆的长度" class="headerlink" title="电感杆的长度"></a>电感杆的长度</h3><p>如果你看过曾经电磁车的视频就会发现，他们的电磁杆伸的非常靠前，而且越靠前的车越快，我刚开始也刷到过，我还觉得这玩意真丑，但这对于电磁车非常重要，因为小车的反应是有延迟的，你不可能让一个有质量且速度很大的物体在极短的时间内拐很急的弯，这需要很大的力才能使它的动量急速改变，看过三体的同学应该知道，能完成锐角转弯的只有水滴，但这是自然选择号。所以电感杆的位置越靠前，留给小车反应的时间就越长，但一般来说，一个电感杆的长度就对应一个电磁车的速度，当你的速度太小，留给小车反应的时间太长，小车就会提前拐弯，切内角过去，假如切内角不违反规则，你可以大胆去做，这样反而更快，但近两届比赛都有锥桶，小心别撞上了。当你的速度太大，小车的杆伸的不长，就会让小车反应不过来，就会冲出去。</p>
+<p>你们在调车的时候，可以从低速慢慢调，调差不多了开始上速度，就可以确定一个比较合适的长度了。</p>
+<p>我们的杆长度也就十五厘米？具体没量过，估摸着试试吧，我们设太长了会发现撞锥桶，以及会串道，因为我们的赛道极其紧凑，杆子太长拐弯时就会扫到相邻的线。</p>
+<h3 id="电感的高度"><a href="#电感的高度" class="headerlink" title="电感的高度"></a>电感的高度</h3><p>电感的探测范围和高度有关。你可以把电感想象成一颗向下照的灯泡，一颗灯泡向下照，他照射的范围和高度有关，高度越高，能照亮的地面面积越大，贴在地上，就只能照亮极小的范围了，所以小车可以探测的范围和小车的前瞻高度是紧密相连的，想让小车看的更远，你除了把电感杆的长度延长外，还可以把前瞻抬高。</p>
+<p>以下是我们小车前瞻的高度</p>
+<p><img src="/./C:/Users/Lenovo/Desktop/MarkDown/%E6%99%BA%E8%83%BD%E8%BD%A6-%E7%94%B5%E7%A3%81%E7%BB%84%E7%9A%84%E4%BC%A0%E6%89%BF%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89.assets/5cf3f6ec46a89c6d7e76c8f4ff04b14e.jpg" alt="5cf3f6ec46a89c6d7e76c8f4ff04b14e"></p>
+<p>我们的前瞻离地8.5cm，为什么这么精确，因为这个我真量过，我们看了逐飞和龙邱两家的锥桶，它的高度都是8cm，8.5cm刚好可以绕过去，不那么容易撞锥桶。这个电感高度越高，小车看到的范围就越大，在一定程度上可以弥补电感杆不能伸太长的短板，而且相较于紧贴地面，当小车走到拐弯处时他电感值的变化也会比较平缓，贴太靠下就会变化非常快，平缓变化就会让小车先稍微拐一点点，而后越来越大，等直角相当近的时候基本拐的角度也足够了，视觉效果就十分丝滑，也不太掉速度，会很快，因为踩油门谁不会啊，弯道快才是真的快。</p>
+<p>但是，物极必反。探测范围大了，也就意味着你很可能会探测到相邻的线，如果你的赛道没那么紧凑，这样设计没问题，但我们的赛道极其紧凑，杆子伸太长就会串道。这个你们调车的时候也需要注意一下。</p>
+<h2 id="关于PID"><a href="#关于PID" class="headerlink" title="关于PID"></a>关于PID</h2><p>PID即比例积分微分控制，简称PID控制，其中P表示比例、I表示积分、D表示微分。PID控制算法是最早发展起来的控制策略之一，由于其算法简单、鲁棒性好和可靠性高，被广泛应用于工业过程控制。而且也衍生出多种相关的控制算法：P控制、PI控制、PD控制、增量式PID控制、抗饱和PID、微分先行PID、自适应PID、模糊PID控制等。虽然这些算法各不相同，但都是基于最基本的PID控制算法为原型的。</p>
+<p>PID是一个极其优雅简洁又好用的控制算法，将控制的美体现的淋漓尽致。如果要详细介绍，将占用极大的篇幅，我打字也不是很快，而且自己的理解也不够深，故而不在此赘述，bilibili上有一期很好的视频，江协科技的PID教程，在我大二的那个寒假，我看了几集，大受震撼，一直受用。在调试PID之前，你一定要去看看。需重点关注位置式PID与增量式PID的区别，积分限幅，串级PID这些内容。</p>
+<p>关于PID的详细知识大家可以移步江协科技PID教程，你想知道的，里面都有答案，在这里，我只讲我们的代码里用到的部分：</p>
+<h3 id="增量式PID"><a href="#增量式PID" class="headerlink" title="增量式PID"></a>增量式PID</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> <span class="title function_">Pid_IncCtrl</span><span class="params">(<span class="type">pid_param_t</span> * pid, <span class="type">float</span> error)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//	pid-&gt;out=Constrain_float(pid-&gt;out,-5000,5000);		//限幅</span></span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out &gt; <span class="number">5000</span>) pid-&gt;out = <span class="number">5000</span>;   <span class="comment">//限制最大值</span></span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out&lt; <span class="number">-5000</span>) pid-&gt;out = <span class="number">-5000</span>;   <span class="comment">//限制最小值</span></span><br><span class="line">	<span class="keyword">if</span>(error&lt;<span class="number">5</span>&amp;&amp;error&gt;<span class="number">-5</span>) error=<span class="number">0</span>;</span><br><span class="line">	pid-&gt;out_p = pid-&gt;kp * (error - pid-&gt;last_error);	<span class="comment">//此次误差与上次误差之差</span></span><br><span class="line">	pid-&gt;out_i = pid-&gt;ki * error;<span class="comment">//误差</span></span><br><span class="line">	pid-&gt;out_d = pid-&gt;kd * ((error - pid-&gt;last_error) - pid-&gt;last_derivative);<span class="comment">//两次误差之差的差</span></span><br><span class="line"></span><br><span class="line">	pid-&gt;last_derivative = error - pid-&gt;last_error;  </span><br><span class="line">	pid-&gt;last_error = error;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out_i&gt;<span class="number">500</span>) pid-&gt;out_i=<span class="number">500</span>;<span class="comment">//误差的限幅</span></span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out_i&lt;<span class="number">-500</span>) pid-&gt;out_i=<span class="number">-500</span>;</span><br><span class="line">	</span><br><span class="line">	pid-&gt;out+=(pid-&gt;out_p + pid-&gt;out_i + pid-&gt;out_d);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out &gt; <span class="number">5000</span>) pid-&gt;out =<span class="number">5000</span>;</span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out&lt; <span class="number">-5000</span>) pid-&gt;out = <span class="number">-5000</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> pid-&gt;out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在pid.c这个文件里，写了两种PID，分别是位置式PID和增量式PID，这两种很好区别，我是这么理解的，所谓增量式，实际上就是一直需要误差积分，即误差累加，增量是误差的增量，所以很需要 i 项，因此在这个PID里面，i 项是最重要的，那也很容易理解，它需要累积误差才可以起作用，累计的过程必然是需要时间的，所以它一般只用于稳态误差比较大，又对响应速度要求不太高的地方，相信你也想到了，就是电机控制，对于电机的控制用增量式PID是最适合的。</p>
+<p>依然是该说缺点了，我们以电机匀速转动为例，在前面提到，增量式PID很依赖误差的增量，那如果误差的增速比较快，且一直累计，那就会导致误差会累计到一个非常非常大的值，大到即使我们的电机达到目标转速也不足以短时间内消除这个误差，就会让电机先猛转一小会，直到消除了累计的误差才开始正常调控，等到小车转弯或者遇到一些别的什么情况，速度降下去了，误差又累计上去了，小车又会猛的加速，猛地加速在小车运动时的体现就是翘头，非常不丝滑，所以为了消除这个情况，我们需要进行误差限幅，当误差大到某一个值，误差就恒等于最大值就可以了。在我们的代码里就是 out_i 这一项的限幅。</p>
+<p>但是仅仅对误差限幅还不够，为了保护电机，我们最好将电机转速限制在60%以下，小车跑快也用不到那么高转速，我们限制了pid最大输出5000，即限制50%占空比。</p>
+<p>在使用中还有一个问题，由于没有经验，前期一直在研究循迹算法，没有顾及到PID的基础知识，时间也不足以让我把每个环节都吃透，小车跑起来看着简单，实际上里面蕴含的奥秘博大精深，一直往前看固然是好的，走的会很快，但快有什么用？把细节注意好，每一步走得稳才能走得对，走得对才更有希望胜利。我在后期注意到，我们的小车仿佛速度卡在了1.55m&#x2F;s，在此刻距离省赛不到10天，哔哩哔哩上面的大佬人均两米，最绝望的时候莫过于此，日夜不休的调车，各种办法试了个遍，仍是没有丝毫进展。而后发现小车的轮子的最大速度好像响应很差，响应不够好，在低速时候不明显，在高速时候就很差，在拐弯时外侧轮子明显响应不过来。这才了解到，是pid的最大限幅限制的太低了，而且最基础的速度环响应也不好，一直在提到的，增量式pid很依赖误差的累计，那怎样才能让响应快？必然需要误差的累计足够快！即 i 项要足够大！，速度环的增量式pid只用到pi控制即可，d项作用不大。这么说来，其实这个**增量式pid的i更像是p，p又更像是d了。**为什么这么说，在速度环闭环里会细说。</p>
+<h3 id="位置式PID"><a href="#位置式PID" class="headerlink" title="位置式PID"></a>位置式PID</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> <span class="title function_">PidLocCtrl</span><span class="params">(<span class="type">pid_param_t</span> * pid, <span class="type">float</span> error)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">/* 累积误差 */</span></span><br><span class="line">	pid-&gt;integrator += error;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* 误差限幅 */</span></span><br><span class="line">	<span class="comment">//constrain_float(pid-&gt;integrator, -pid-&gt;imax, pid-&gt;imax);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	pid-&gt;out_p = pid-&gt;kp * error;</span><br><span class="line">	pid-&gt;out_i = pid-&gt;ki * pid-&gt;integrator;</span><br><span class="line">	pid-&gt;out_d = pid-&gt;kd * (error - pid-&gt;last_error);</span><br><span class="line"></span><br><span class="line">	pid-&gt;last_error = error;</span><br><span class="line"></span><br><span class="line">	pid-&gt;out = pid-&gt;out_p + pid-&gt;out_i + pid-&gt;out_d;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> pid-&gt;out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>位置式PID就简单的多，没有限幅，长度比增量式短太多，用法也比较简单，它不依靠i项的累加，它的响应是很快的，所以它用在传感器的pid控制里，小车在高速行驶时，对信号的突然改变如突然检测到弯道要拐弯了，是需要响应很快的，所以我们在循迹时对传感器采集到的信号进行处理时用这个PID，这个pid我们一般用pd控制，不加入i项，调试时没有太多需要注意的，在目标速度上行驶响应不够猛就加p，p加的差不多了可以响应的好了再慢慢加d，让小车不那么抖，加了d后响应还不够就接着加p，这样调就可以。</p>
+<h2 id="PID定速控制——速度环闭环"><a href="#PID定速控制——速度环闭环" class="headerlink" title="PID定速控制——速度环闭环"></a>PID定速控制——速度环闭环</h2><p>每个组别装好车模的第一件事，必定是让电动机转起来，让电机转起来很简单，在逐飞例程里只需要一直给电动机输出不同占空比PWM信号即可，逐飞的PWM信号一般是占空比0–10000可调的PWM波，这样5000的duty就对应50%的占空比，在让小车动起来时，我们只需要给左右两电机固定PWM即可，不宜太大，30%的占空比已经可以让小车跑的飞快了。</p>
+<p>但是，小车左右两个电机虽然给了相同的占空比，在实际下地跑的时候，小车左右轮并不会转的一样快，体现就是小车走不直。这是因为由于装配问题导致了左右轮转起来的摩擦力不同，所以在组装车模时，一定要用手转转轮子，以维持左右轮转动的阻尼感大体相同。<strong>这一点很重要！！！</strong>，左右轮调好后，小车走的可以稍微直一点点，可硬件上调整总会不太平衡的，这就需要我们控制里面最优美的算法——PID来进行调控了。</p>
+<p>在PID闭环调控之前，建议把按键函数写写，用按键进行调参，会方便很多。也<strong>需要下载一款上位机软件</strong>，用于观察pid响应的波形，传统派用的是vofa+，逐飞在去年也出了一款自己的上位机软件，叫逐飞助手，这两款软件网上都有安装包。大家可以根据自己喜好下载，我们调参时没考虑太多，直接用了vofa+。</p>
+<p>这就到了对PID的实操环节了，下面是增量式pid，是定速控制的速度环需要的pid。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> <span class="title function_">Pid_IncCtrl</span><span class="params">(<span class="type">pid_param_t</span> * pid, <span class="type">float</span> error)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//	pid-&gt;out=Constrain_float(pid-&gt;out,-5000,5000);		//限幅</span></span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out &gt; <span class="number">5000</span>) pid-&gt;out = <span class="number">5000</span>;   <span class="comment">//限制最大值</span></span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out&lt; <span class="number">-5000</span>) pid-&gt;out = <span class="number">-5000</span>;   <span class="comment">//限制最小值</span></span><br><span class="line">	<span class="keyword">if</span>(error&lt;<span class="number">5</span>&amp;&amp;error&gt;<span class="number">-5</span>) error=<span class="number">0</span>;</span><br><span class="line">	pid-&gt;out_p = pid-&gt;kp * (error - pid-&gt;last_error);	<span class="comment">//此次误差与上次误差之差</span></span><br><span class="line">	pid-&gt;out_i = pid-&gt;ki * error;<span class="comment">//误差</span></span><br><span class="line">	pid-&gt;out_d = pid-&gt;kd * ((error - pid-&gt;last_error) - pid-&gt;last_derivative);<span class="comment">//两次误差之差的差</span></span><br><span class="line"></span><br><span class="line">	pid-&gt;last_derivative = error - pid-&gt;last_error;  </span><br><span class="line">	pid-&gt;last_error = error;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out_i&gt;<span class="number">500</span>) pid-&gt;out_i=<span class="number">500</span>;</span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out_i&lt;<span class="number">-500</span>) pid-&gt;out_i=<span class="number">-500</span>;</span><br><span class="line">	</span><br><span class="line">	pid-&gt;out+=(pid-&gt;out_p + pid-&gt;out_i + pid-&gt;out_d);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out &gt; <span class="number">5000</span>) pid-&gt;out =<span class="number">5000</span>;</span><br><span class="line">	<span class="keyword">if</span>(pid-&gt;out&lt; <span class="number">-5000</span>) pid-&gt;out = <span class="number">-5000</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> pid-&gt;out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在让电动机匀速转动的pid里一般用pi控制器，不加入d项，前面也说了i项决定了响应速度，所以我们调这个pid时需要把p项给0，慢慢加i，等小车响应力度上来后，这时候一般是非常抖的，再慢慢加p，可以消除这个抖动。</p>
+<p>连续几年国奖的智能车大佬<em>我依青山在</em>有一个办法，他是讲可以先给p和i都置0，目标速度也给0，把小车放在室内组别的坡道上，这时候小车肯定是会滑下来的，慢慢加i，直到小车可以稳稳停在坡道，抖动先不要管，响应力度上去后可以加p，消除抖动。</p>
+<p>然而我们的小车比较小，比较轻，用这个调的并不准，所以可以在用青山的办法后，在此基础上用**vofa+**这一款上位机软件，直接观察波形，给一个不太大的目标速度，让小车轮子转起来，基于波形再细细调。一般目标转速的误差浮动不超过5%就可以。之后按动按键把速度提上去，再观察波形，以及响应，再细细调一遍。这时的pid参数就是比较好的参数了。</p>
+<h2 id="关于基础循迹"><a href="#关于基础循迹" class="headerlink" title="关于基础循迹"></a>关于基础循迹</h2><h2 id="关于核心控制算法"><a href="#关于核心控制算法" class="headerlink" title="关于核心控制算法"></a>关于核心控制算法</h2><h2 id="关于元素判断——环岛"><a href="#关于元素判断——环岛" class="headerlink" title="关于元素判断——环岛"></a>关于元素判断——环岛</h2><h2 id="提速——关于串级PID"><a href="#提速——关于串级PID" class="headerlink" title="提速——关于串级PID"></a>提速——关于串级PID</h2>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>欢迎你来翻阅</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>世之奇伟，瑰怪，非常之观，常在于险远，非有志者不能至也。</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/09/06/%E7%AB%8B%E5%88%9B%E5%AE%9E%E6%88%98%E6%B4%BEESP32S3%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/">立创实战派ESP32S3学习历程</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© John Doe | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
