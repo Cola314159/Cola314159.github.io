@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+<title>Turing Complete手册 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Cola’s  Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Cola’s  Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Turing Complete手册</h1>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Turing-Complete-随笔"><a href="#Turing-Complete-随笔" class="headerlink" title="Turing Complete 随笔"></a>Turing Complete 随笔</h1><p>在最初的最初，我看了《三体》这个电视剧，剧中有牛顿和冯·诺伊曼一起在三体游戏里搭起人列计算机，电视剧里只是一群人手举火把，只进行简单的逻辑判断便可以计算方程的解，那时还是高三，那时对我真有一种震撼，我迫切想知道其中的原理，后来上大学，接触了STEAM，发现了这款游戏，图灵完备是我在2024年圣诞节买下的，这款游戏一般没有打折，我在圣诞节等的冬促也没有打折，索性不等了，这款游戏早有耳闻，它值得这个价钱。我在拍下来后肝了一个星期，打了一半的进度，后因为寒假回家没玩，开学准备智能车也没玩，在25年六月份打开发现自己已经记不得自己之前怎么通关的了，所以我直接清除存档，在今天，25年的九月份，一边玩，一边记录。希望可以在不久的将来，亲手搭起一台图灵机。</p>
+<h2 id="基础逻辑电路"><a href="#基础逻辑电路" class="headerlink" title="基础逻辑电路"></a>基础逻辑电路</h2><p>在最开始，你将被外星人绑架，他的目的是使你造出一台计算机。</p>
+<p>刚开始的第一章即基础逻辑电路，它会给你一个与非门，用与非门可以把它转换成非门，再利用非门和与非门即可搭起其他逻辑门，如与门，或非门，或门，同或门，异或门等等等等。那这不禁让人好奇，为什么最初给的不是其他门，而是与非门呢？</p>
+<p>下面的词条给出了解释，<strong>与非门是一种响应速度更快，占用面积小的通用逻辑门</strong>。</p>
+<p>所以，在以后的解法中，我也会尽可能的用与非门来解决问题。</p>
+<p>![image-20250913154203271](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250913154203271.png)</p>
+<p>德·摩根律？好熟悉的名字，在概率论与数理统计的第一章，我仿佛也听过这个名字。</p>
+<p>我们可以再去看看概率论与数理统计的这一个知识点，思考一下它和门电路的关系，还是很有意思的。</p>
+<p>几种逻辑门是对称的，所以，我们可以轻而易举就记住他们的真值表，并理解他们的逻辑内涵。</p>
+<p>![image-20250911154759107](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250911154759107.png)</p>
+<h2 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h2><h3 id="成对的麻烦"><a href="#成对的麻烦" class="headerlink" title="成对的麻烦"></a>成对的麻烦</h3><p>这是本章开头遇到的一个比较有挑战性的关卡。它的要求是这样的：找到大于1的袜子。</p>
+<p>那为什么我们做计算机需要识别是否有大于一的信号呢？还是因为我们的计算机计数都是二进制的，假如要计数，那么我们在大于一</p>
+<p>的时候就必定要进位。所以这就是本关的意义，结合以后关卡，就可以实现二进制计数。</p>
+<p>![](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250913154817493.png)</p>
+<p>成对的麻烦即是需要找到两个及两个以上的高电平。</p>
+<p>肯定需要或门</p>
+<p>很容易想到用三路或门，因为四个输入，放四个三路或门，刚好是四种完全不同的组合。</p>
+<p>而三路或门内部只要有一个输入是高电平输出即高电平，那么，假如只有一只袜子，这四个三路或门的四个输出就会有三个输出是高电平，除去没有选择这只袜子作为输入的三路或门是低电平。</p>
+<p>那么只要有大于一的袜子，这四个输出就必定全是高电平。这就起了选择的作用。</p>
+<p>而后对这四个输出进行与操作，，只有四个全是高电平再输出高电平即可。</p>
+<p>所以，我搭建了如下的电路图：</p>
+<p>![image-20250913154911201](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250913154911201.png)</p>
+<p>不知是否还有更好的解法，我所能理解的最简单的解法，就是这样了。</p>
+<h3 id="奇数个信号"><a href="#奇数个信号" class="headerlink" title="奇数个信号"></a>奇数个信号</h3><p>这一关是要求我们在输入信号是奇数个的时候输出高电平，注意为什么会有这样的要求？这是因为计算机使用的计数方法为二进制，而二进制逢二便进一，而奇数转化为二进制，其二进制数的低位必为1，所以只要可以在奇数个信号时输出高电平，就可以构成二进制加法器的基础了。这就是本关的意义。</p>
+<p>![image-20250913160055826](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250913160055826.png)</p>
+<p>我在这一关用了这样的解法，因为异或门只有在两个输入不同时才输出高电平，所以它的功能很符合寻找奇数这一需求，这样只要前俩输出是奇数，那么前俩输出的异或门便是高电平，后俩输出的那个异或门同理，而奇数加奇数会是偶数，所以这俩异或门的输出分别接另一个异或门的输入，这个异或门的输出就可以筛选掉输出偶数的情况。</p>
+<h3 id="半加器"><a href="#半加器" class="headerlink" title="半加器"></a>半加器</h3><p>上一关我们在数信号，这一关便要做一个半加器，所谓半加器，就是把两个输入的高电平数计出来，其实就是要解决二进制加法进位的问题。</p>
+<p>![image-20250913161301493](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250913161301493.png)</p>
+<p>为解决进位的问题，我们只需要一个与门就可以了，所以就可以在上一关的理解下搭建电路了，用异或门筛选奇数个信号放在二进制低位，再由与门决定是否需要进位。这样一个自带进位的二进制计数器就做出来了，那如果有无数个这样的二进制计数器呢？可以预见的是，这是一个细胞，无数个这样的细胞组建起来，我们终将做出一台伟大的计算机。</p>
+<h3 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h3><p>这一关的目的是实现信号计数，来数出信号的个数，在前面我们已经可以利用成对的麻烦来进行进位操作，也可以利用奇数个信号来进行判断其二进制的低位是否为1，那么很容易的，这就可以把他们二者结合起来，组成一个计数器。</p>
+<p>![image-20250915183735024](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250915183735024.png)</p>
+<p>这里用来显示第一位的电路和奇数个信号这一关的电路相同，显示第二位的电路和成对的麻烦这一关相同，不同的是，当这四个输入信号全为高电平时，我们不能输出高电平，但此时第三位需要输入高电平。也就是当第三位的输入高电平时，成对的麻烦这一部分电路需输出低电平，那就可以利用第三位的输入信号和成对的麻烦这一关的电路进行异或操作，即可实现。理解清楚原理，打这些关卡其实会很好理解，也很容易想到对策。</p>
+<h3 id="全加器"><a href="#全加器" class="headerlink" title="全加器"></a>全加器</h3><p>在通过了之前的关卡后，我们的知识储备已经足够我们做出来一个全加器了，半加器是在执行两个输入信号的计数，全加器则是三个，其实也是非常简单就可以想到的，这里不去赘述了。</p>
+<p>值得思考的是，我们为什么要去制作三个输入的计数器呢？如果要去做加减法，一个加数再加另一个加数不是已经足够构成一个加法算式了吗？</p>
+<p>我们的计算机是通过数以亿计的晶体管完成最简单的判断来工作的，他的核心就是把简单的东西累加在一起来完成复杂运算。那么每一个部件都需要和其他部件一起合作，这样才能完成庞大且复杂的任务，那么经过思考，我们应该可以猜到，另一个输入口，是为了加入他的低位进位的值的，有了这个输入口，我们才可以把许多全加器串联在一起，完成二进制的数位进位，并能完成无数个位数的二进制加法。</p>
+<p>![image-20250916170103426](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250916170103426.png)</p>
+<h3 id="八位加法器"><a href="#八位加法器" class="headerlink" title="八位加法器"></a>八位加法器</h3><p>在上一关，我们制作出了这样一个零件–全加器，我们也思考到，如果把他们串联在一起，可能会实现许多位数的二进制加法。</p>
+<p>可以想到这些，那这一关的解法就已经出来了，我们把八个全加器首尾相连，再对二进制数按位相加，进的位参与高一级的位运算，就可以解出此关，我画的电路图如下。</p>
+<p>![image-20250916172627308](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250916172627308.png)</p>
+<h3 id="三位解码器"><a href="#三位解码器" class="headerlink" title="三位解码器"></a>三位解码器</h3><p>这一关要求我们制作一个解码器，制作之前，我们肯定要先知道为什么要解码，我们每个人都有一串身份证号，这就是代表我们的数码，也就是国家给我们编了码，而解码，就是根据这串数字找到我这一个人，这就是解码</p>
+<p>解码其实就是检索。</p>
+<p>这一关没什么难度，所以不再记笔记了。只需要知道它的意义。</p>
+<p>![image-20250919000658936](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250919000658936.png)</p>
+<h3 id="逻辑引擎"><a href="#逻辑引擎" class="headerlink" title="逻辑引擎"></a>逻辑引擎</h3><p>这是算术运算的最后一关了，在这里，我们将会实现按位的逻辑操作，在前面我们已经做出了全加器，可以用于计算加法，但是，计算机只有这个是不够的，它必须可以进行逻辑判断，这样才能足够智能。那可以来看看这一关的要求了。</p>
+<p>![image-20250919012942817](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250919012942817.png)</p>
+<p>在这一关只给了我们一小块地方用于绘制电路，因此我们必须尽可能缩小电路的面积，有两个八位输入，但八位的按位逻辑操作我们只有按位或，所以这一关的一个小难点其实是根据之前的德·摩根定律把按位或门改成按位与，按位与非，按位或非。</p>
+<p>还要加四个开关，用来开启不同的逻辑操作，其实这里控制开关时我们用的就已经是解码器了，但我没有用它，用了几个与门。</p>
+<p>下面就是我的解法了，其实不难。</p>
+<p>![image-20250919013400139](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250919013400139.png)</p>
+<h2 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h2><h3 id="延迟线"><a href="#延迟线" class="headerlink" title="延迟线"></a>延迟线</h3><p>这一章的关键元件是一个叫延迟线的东西，它的作用是把输入延迟一刻再进行输出，所以，其实这个元件的首尾可以连接在一起，因为它的延迟这一属性，不会产生循环依赖，那既然它可以延迟输出，他的作用与时间相关联，那很容易想到，它可以保存数据一段时间，那么，它就有希望被做成存储器，即使它只能保存数据一刻。</p>
+<p>而我们这一章的目的，便是要造出可以一直存储的存储器。</p>
+<p>![image-20250917231921785](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250917231921785.png)</p>
+<h3 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h3><p>这一关有两个信号输入，两个字节输入，两个字节输出。要求一个信号来决定是选择使用哪个字节数据，另一个信号决定被选择的数据输出到哪里，很容易想到，我们需要开关，需要反相器。</p>
+<p>那如何实现具体功能呢，我们可以把它分成两个部分，一个是选择，一个是使用，这两个部分可以分开搭建，搭建完毕后可以用一根线来连接起来，去用于传递字节数据，那么这根线就起到了运输总数据的功能，这就是总线。</p>
+<p>总线，就是我的解法下面这一根很长来传数据的线。</p>
+<p>它可以变成一个很好的元件，用于传输数据，这只是两个字节的选择与使用，但如果有很多呢，我们可以把很多这样的小模块连接在一起，结合我们目前使用的单片机，计算机想一想，这个结构是否可以实现把内存里特定位置的数据传输到特定位置来使用？这应该也就是本关的意义了。</p>
+<p>![image-20250917233607605](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250917233607605.png)</p>
+<h3 id="优雅存储"><a href="#优雅存储" class="headerlink" title="优雅存储"></a>优雅存储</h3><p>我们之前提到了一个词：叫循环依赖。</p>
+<p>下面我们尝试将一根延迟线首尾连接，我们来开始想象。</p>
+<p>假如此延迟线输入0，那么它第一刻输出0，由于其首尾相连，那么它下一刻的输出还是0，而由于它下一刻的输出是0，那么它下下一刻的输出也还是0，那它下下下一刻……其实都是0。</p>
+<p>假如此延迟线输入1，那么它第一刻输出1，由于其首尾相连，那么它下一刻的输出还是1，而由于它下一刻的输出是1，那么它下下一刻的输出也还是1，那它下下下一刻……其实都是1。</p>
+<p>你发现没有，它有一个极其伟大的作用，他可以一直将一种状态持续下去，它和恒定输出的高电平低电平这俩元件是不同的，它的状态是可变的，它保持的状态和他第一次输入的值有关，而这也就是说，它的状态…是可擦写的！！！这不正和我们想要的存储器的性质一样吗？</p>
+<p>好了，那我们可以开始看本关的要求了：</p>
+<p>![image-20250918005050057](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250918005050057.png)</p>
+<p>这个元件的特性就是可以控制是否写入，假如没有写入，那它就可以一直输出存储的值</p>
+<p>假如有写入，那么在这一刻，这里存储的值将被覆盖，但此刻的输出，还是上一刻存储的值，它此刻存储的值，将在下一刻起作用。</p>
+<p>控制是否写入很简单，一个开关就可以做到。</p>
+<p>一直存储也不难，我们刚刚的思考已经做到了这一点。</p>
+<p>但我们可以再仔细思考思考，我们在写入的过程中是不可以有循环依赖的，这会造成冲突，也就是说在写入时，我们需要关闭循环依赖，那我们如何实现延迟线的循环依赖和我们的写入操作不冲突呢？很简单，依旧是一个开关，需要注意的是，开关是有方向的。</p>
+<p>以下即是解法。</p>
+<p>![image-20250918005410037](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250918005410037.png)</p>
+<p>有了这个存储单元，我们就可以存储数据了。它存储的是一个高低电平，也就是一位，那么八个这样的存储单元加起来，我们就可以存储一字节的数据了。这是很容易做到的，所以八位存储器就不再赘述，我们已经离做出一个存储器不远了。</p>
+<h3 id="小盒子"><a href="#小盒子" class="headerlink" title="小盒子"></a>小盒子</h3><p>小盒子顾名思义，就是一个极其小的空间，它的要求是我们要在一个很小的空间内做一个四个字节的存储器，在上一关我们创造出了优雅存储的一字节存储器，在这一关，我们就需要拿他来组装了。</p>
+<p>这里有一个难点，就是，我们写入和读取都是一个字节，但这个单元有四个字节的内存空间，那我们如何知道自己需要操作哪一个字节呢？本关还给四个寄存器命了名，分别为A0、A1、B0、B1，这个名字我们现在管它叫地址。很容易想到，这就需要解码器了，解码器的功能就是检索，检索地址来找到我们需要的寄存器。</p>
+<p>本关在逻辑上并不难，难在如何把这么多线集成在一个极其小的空间内，这里给出了我的解法，走线重叠且很乱，但好在能用。</p>
+<p>![image-20250919022552217](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250919022552217.png)</p>
+<p>这个外星人在这一关只要求我们做出来四个字节的存储器，但实际上按同样的思路我们可以轻易做出成千上万字节的存储器，所以这个外星人也不让我们做如此繁琐的工作了，他直接给了我们一个256字节的存储器。</p>
+<h2 id="处理器架构"><a href="#处理器架构" class="headerlink" title="处理器架构"></a>处理器架构</h2><p>在进行了前面几章的积淀后，我们做出了加法器、存储器、总线、解码器，有了这些单元，我们终于可以着手搭建一台图灵完备的计算机了。图灵在上个世纪做出来的机器，这个引发了世界技术革命的机器，这个改变了人类历史走向的机器，我们终于可以一步一步循着他的思想做出来了。</p>
+<h3 id="算数引擎"><a href="#算数引擎" class="headerlink" title="算数引擎"></a>算数引擎</h3><p>这一章开始的第一关，是做出算数引擎，也就是把全加器与逻辑引擎组合在一起，并且使它可以进行减法运算。这个部件我们今天叫它ALU，它是我们芯片里进行数据处理的部件，是整个CPU的心脏。</p>
+<p>这一关的要求很简单，也很容易做，因此也不必记笔记，解法已在下面给出。</p>
+<p>![image-20250919014611266](.&#x2F;C:&#x2F;Users&#x2F;Lenovo&#x2F;Desktop&#x2F;MarkDown&#x2F;Turing Complete 随笔.assets&#x2F;image-20250919014611266.png)</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>欢迎你来翻阅</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>世之奇伟，瑰怪，非常之观，常在于险远，非有志者不能至也。</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/09/25/%E6%99%BA%E8%83%BD%E8%BD%A6-%E7%94%B5%E7%A3%81%E7%BB%84%E7%9A%84%E4%BC%A0%E6%89%BF%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/">智能车-电磁组的传承（持续更新）</a>
+            
+            
+            <a class="next" rel="next" href="/2025/09/06/%E7%AB%8B%E5%88%9B%E5%AE%9E%E6%88%98%E6%B4%BEESP32S3%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/">立创实战派ESP32S3学习历程</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© John Doe | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
